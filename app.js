@@ -21,7 +21,6 @@ app.post('/getRepos', upload.any(), async (request, response) => {
             result = await getUserRepos(users[i]);
             obj[users[i]] = result.map(data => data.url);
         }
-        // await fs.unlinkAsync(req.file.path)
         response.status(200).send(obj);
     }
     catch(e) {
